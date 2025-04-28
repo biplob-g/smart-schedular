@@ -1,0 +1,373 @@
+/**
+ * Smart Schedular Public CSS
+ */
+
+/* Main container */
+.smart-schedular-container {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+/* Left panel - Service info */
+.smart-schedular-service-panel {
+    width: 35%;
+    padding: 2rem;
+    background-color: #1a73e8;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.smart-schedular-service-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.smart-schedular-service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.smart-schedular-service-duration {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.smart-schedular-service-duration svg {
+    margin-right: 0.5rem;
+    width: 16px;
+    height: 16px;
+}
+
+.smart-schedular-service-description {
+    margin-top: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Right panel - Calendar */
+.smart-schedular-calendar-panel {
+    width: 65%;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.smart-schedular-calendar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    color: #333;
+}
+
+/* Calendar header */
+.smart-schedular-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.smart-schedular-month-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.smart-schedular-nav-buttons {
+    display: flex;
+}
+
+.smart-schedular-nav-button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f3f4;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #444;
+    transition: background-color 0.2s;
+    margin-left: 0.5rem;
+}
+
+.smart-schedular-nav-button:hover {
+    background-color: #e0e0e0;
+}
+
+.smart-schedular-nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Calendar grid */
+.smart-schedular-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.smart-schedular-weekday {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.smart-schedular-day {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.smart-schedular-day.empty {
+    cursor: default;
+}
+
+.smart-schedular-day.past,
+.smart-schedular-day.unavailable {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.smart-schedular-day.available {
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.smart-schedular-day.selected {
+    background-color: #1a73e8;
+    color: white;
+    font-weight: 600;
+}
+
+.smart-schedular-day.available:hover:not(.selected) {
+    background-color: #e8f0fe;
+}
+
+.smart-schedular-day.today {
+    font-weight: 600;
+}
+
+.smart-schedular-day.today::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+}
+
+/* Time slots */
+.smart-schedular-selected-date {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.smart-schedular-time-slots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.smart-schedular-time-slot {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.smart-schedular-time-slot:hover {
+    border-color: #1a73e8;
+    background-color: #e8f0fe;
+}
+
+.smart-schedular-time-slot.selected {
+    border-color: #1a73e8;
+    background-color: #1a73e8;
+    color: white;
+    font-weight: 500;
+}
+
+/* Timezone selector */
+.smart-schedular-timezone-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.smart-schedular-timezone-icon {
+    margin-right: 10px;
+}
+
+.smart-schedular-timezone-selector select {
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    color: #1a73e8;
+    cursor: pointer;
+}
+
+/* Booking form */
+.smart-schedular-booking-form {
+    display: none;
+}
+
+.smart-schedular-booking-form.active {
+    display: block;
+}
+
+.smart-schedular-form-group {
+    margin-bottom: 1rem;
+}
+
+.smart-schedular-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.smart-schedular-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.smart-schedular-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.smart-schedular-button:hover {
+    background-color: #1765cc;
+}
+
+.smart-schedular-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.smart-schedular-back-button {
+    background-color: transparent;
+    color: #1a73e8;
+    border: 1px solid #1a73e8;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-right: 10px;
+}
+
+.smart-schedular-back-button:hover {
+    background-color: #e8f0fe;
+}
+
+/* Loader */
+.smart-schedular-loader {
+    display: none !important;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.smart-schedular-loader.active {
+    display: none !important;
+}
+
+.smart-schedular-spinner {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #1a73e8;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success/Error messages */
+.smart-schedular-message {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.smart-schedular-message.active {
+    display: block;
+}
+
+.smart-schedular-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.smart-schedular-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .smart-schedular-container {
+        flex-direction: column;
+    }
+    
+    .smart-schedular-service-panel,
+    .smart-schedular-calendar-panel {
+        width: 100%;
+    }
+    
+    .smart-schedular-time-slots {
+        grid-template-columns: 1fr;
+    }
+} 

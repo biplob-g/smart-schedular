@@ -1,0 +1,261 @@
+/**
+ * Smart Schedular Admin CSS
+ */
+
+/* Dashboard */
+.smart-schedular-dashboard {
+    margin-top: 20px;
+}
+
+.smart-schedular-stats {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.stat-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    width: calc(33.333% - 14px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-icon {
+    font-size: 36px;
+    margin-right: 20px;
+    color: #1a73e8;
+}
+
+.stat-content h3 {
+    margin: 0 0 5px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.stat-content p {
+    margin: 0;
+    color: #666;
+}
+
+.stat-link {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+}
+
+.smart-schedular-recent,
+.smart-schedular-help {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.smart-schedular-recent h2,
+.smart-schedular-help h2 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.appointment-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.status-confirmed {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.status-declined {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.smart-schedular-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Services page */
+.smart-schedular-service-form {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row input[type="url"],
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-row textarea {
+    min-height: 100px;
+}
+
+.time-slots-container {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.time-slot {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.time-slot select,
+.time-slot input {
+    max-width: 150px !important;
+}
+
+.time-slot .remove-time-slot {
+    color: #a00;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-time-slot {
+    margin-top: 10px;
+}
+
+/* Appointments page */
+.smart-schedular-appointment-filters {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.appointment-details {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.appointment-details h2 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.appointment-detail-row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.appointment-detail-label {
+    width: 150px;
+    font-weight: 600;
+}
+
+.appointment-actions {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+/* Settings page */
+.smart-schedular-settings {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h2 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Media queries */
+@media screen and (max-width: 782px) {
+    .stat-box {
+        width: 100%;
+    }
+    
+    .appointment-detail-row {
+        flex-direction: column;
+    }
+    
+    .appointment-detail-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+} 
